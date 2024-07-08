@@ -59,3 +59,8 @@ button{
     margin-top: 16px;
     border-radius: 1rem;
 }
+
+button:hover{
+    background-color: black;
+    color: white;
+}
