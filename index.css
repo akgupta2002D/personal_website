@@ -1,66 +1,190 @@
+:root {
+    --primary_color: rgba(5, 5, 5, 1);
+    --secondary_color: white;
+    --font-size: 16px;
+    --margin: 20px;
+  }
+  
+.dark_mode{
+    --primary_color: white;
+    --secondary_color: rgba(5, 5, 5, 1) ;
+} 
+
 *{
     margin: 0px;
     padding: 0px;
-    box-sizing: border-box;
 }
 
-.main_container{
+body{
     display: flex;
-    height: 100vh;
+    flex-direction: column;
+    color: var(--secondary_color);
 }
 
-.background_image_container{
-    max-width: 60vw;
-    overflow-y: hidden;
+/* To not view scrollbar */
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: scroll; /* make scrollbar transparent */
 }
 
-.background_image_container img{
+h1,h2,h3{
+    padding: 2rem;
+    color: var(--secondary_color);
+}
+/* CSS for Hero Section */
+
+.s1_hero_section{
+    background-image: url('images/background_hero1.jpeg');
+    background-size: cover;
+    background-position:top;
+    background-repeat: no-repeat;
+    height: 125vh; /* Adjust as needed */
     width: 100%;
+}
+
+.hero_content_container{
+    display: flex;
+    flex-direction: row;
+    padding: 4rem;
     
 }
 
-.expandable_navbar{
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
-
-.scrolling_projects_view{
+.hero_left, .hero_right{
+    flex: 0 0 27.5%;
     display: flex;
-    width: 40rem;
-    background-color: white;
     flex-direction: column;
-    overflow-y: hidden;
-    position: relative;
-
+    align-items: center;
+    gap: 4rem;
+    justify-content: space-around;
+}
+#hero_profile_container{
+    flex: 0 0 45%;
+}
+#hero_profile_content{
+    width: 100%;
+    background-color: var(--primary_color);
+    min-height: 50rem; 
 }
 
 
-/* Temp */
-
-h2{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 600;
-    font-size: 28px;
-
+/* CSS for Important Moments Section */
+.s2_important_moments{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--primary_color);
 }
 
-.scrolling_projects_view{
-    justify-content: center;
+.s2_cards_container{
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card{
+    width: 16rem;
+    height: 25rem;
+    background-color: var(--secondary_color);
+}
+
+.s2_up{
+    margin-top: 3rem;
+}
+
+/* CSS for Timeline*/
+.timeline{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--primary_color);
+    width: inherit;
+}
+
+.timeline_header_elements{
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-button{
-    background-color: white;
-    border: 1px solid rgba(24, 22, 22, 0.749);
-    height: 2rem;
-    text-align: center;
-    width: 170px;
-    margin-top: 16px;
-    border-radius: 1rem;
+.timeline_elements{
+    display: flex;
+    padding: 1rem;
 }
 
-button:hover{
-    background-color: black;
-    color: white;
+.timeline_elements_left, .timeline_elements_right{
+    flex: 0 0 calc(50% - 8rem);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem 4rem;
+}
+
+.timeline_vertical_split{
+    border-left: 2px solid white;
+}
+
+.element{
+    min-width: 32rem;
+    height: 18rem;
+    background-color: var(--secondary_color);
+}
+/* CSS for Key Interests Section */
+
+.s3_key_interest_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--primary_color);
+}
+
+.s3_content_container{
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.s3_left_content, .s3_right_content{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+}
+
+.s3_content_card{
+    background-color: var(--secondary_color);
+    width: 22rem;
+    height: 12rem;
+}
+
+.s3_main_picture{
+    width: 22rem;
+}
+
+/* CSS for Key Interests Section */
+.s4_call_to_action{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary_color);
+}
+
+.s4_background_image{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 15rem;
+    width: 100%;
+    background-color: var(--primary_color);
+}
+
+.s4_content{
+    width: inherit;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
