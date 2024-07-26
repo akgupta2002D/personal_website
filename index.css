@@ -3,6 +3,8 @@
     --secondary_color: white;
     --font-size: 16px;
     --margin: 20px;
+    --small_font: 0.8rem;
+    
   }
   
 .dark_mode{
@@ -19,6 +21,7 @@ body{
     display: flex;
     flex-direction: column;
     color: var(--secondary_color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* To not view scrollbar */
@@ -32,6 +35,9 @@ h1,h2,h3{
     padding: 2rem;
     color: var(--secondary_color);
 }
+
+/* ############################################################################################################################################### */
+
 /* CSS for Hero Section */
 
 .s1_hero_section{
@@ -56,19 +62,63 @@ h1,h2,h3{
     flex-direction: column;
     align-items: center;
     gap: 4rem;
-    justify-content: space-around;
+    
 }
 #hero_profile_container{
     flex: 0 0 45%;
+    border-radius: 2rem;
 }
 #hero_profile_content{
     width: 100%;
     background-color: var(--primary_color);
+    background-blend-mode: soft-light;
     min-height: 50rem; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2rem;
 }
 
 
+.profile_picture{
+    width: 8em;
+    height: 8rem;
+    padding-top: 4rem;
+}
+
+.profile_picture img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 5rem;
+}
+.profile_name_and_description{
+    padding: 1rem 3rem; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile_name_and_description p{
+    font-size: var(--small_font);
+    color: rgba(255, 255, 255, 0.441);
+}
+
+.profile_name_and_description h2{
+    padding: 0.5rem;
+}
+
+.hero_content_container a{
+    color: var(--secondary_color);
+    text-decoration: none;
+}
+
+/* ############################################################################################################################################### */
+
+
 /* CSS for Important Moments Section */
+
 .s2_important_moments{
     display: flex;
     flex-direction: column;
@@ -93,7 +143,10 @@ h1,h2,h3{
     margin-top: 3rem;
 }
 
+/* ############################################################################################################################################### */
+
 /* CSS for Timeline*/
+
 .timeline{
     display: flex;
     flex-direction: column;
@@ -130,8 +183,96 @@ h1,h2,h3{
 .element{
     min-width: 32rem;
     height: 18rem;
+    background-color: var(--primary_color);
+    display: flex;
+    align-items: center;
+    color: var(--secondary_color);
+}
+
+.left{
+    justify-content: left;  
+}
+
+.right{
+    justify-content: right;
+}
+
+.top{
+    justify-content: top;
+}
+
+.bottom{
+    justify-content: bottom;
+
+}
+
+.box{
+    width: 60%;
+    height: 60%;
     background-color: var(--secondary_color);
 }
+
+.video{
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary_color);
+}
+
+.text{
+    padding: 2rem 1rem;
+    background-color: var(--secondary_color);
+}
+
+/* ############################################################################################################################################### */
+
+/* CSS for Portfolio */
+
+.portfolio_preview{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--primary_color);
+}
+
+.portfolio_text_link{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    width: 100%;
+    align-items: center;
+}
+
+.portfolio_text_link button{
+    display: flex;
+    margin-left: auto;
+    margin-right: 14rem;
+}
+
+.portfolio_gallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 4rem;
+    justify-content: space-around;
+}
+
+.portfolio_element{
+    min-height: 30rem;
+    background-color: var(--secondary_color);   
+}
+
+.element_big{
+    min-width: 35rem;
+}
+
+.element_small{
+    min-width: 20rem;
+    
+}
+
+/* ############################################################################################################################################### */
+
 /* CSS for Key Interests Section */
 
 .s3_key_interest_section{
@@ -165,6 +306,8 @@ h1,h2,h3{
     width: 22rem;
 }
 
+/* ############################################################################################################################################### */
+
 /* CSS for Key Interests Section */
 .s4_call_to_action{
     display: flex;
@@ -185,6 +328,24 @@ h1,h2,h3{
 .s4_content{
     width: inherit;
     display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ############################################################################################################################################### */
+
+/* CSS for Footer */
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--primary_color);
+}
+
+.footer_content{
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
