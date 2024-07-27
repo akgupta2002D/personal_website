@@ -163,13 +163,16 @@ h1,h2,h3{
     width: 100%;
     padding: 0.2rem 3rem;
     
+    
 }
 
 .latest_stuff{
     display: flex;
     flex-direction: column;
     flex: 0 0 85%;
-    overflow-y: scroll;
+    overflow: scroll;
+    gap: 0.5rem;
+    padding: 0.2rem 0.7rem;
 }
 
 .socials{
@@ -185,8 +188,12 @@ h1,h2,h3{
     padding: 0.5rem 0.5rem;
     border-radius: 0.5rem;
     font-size: var(--small_font);
-    
 }
+
+.quicklinks_element:hover{
+    transform: scale(1.05);
+}
+
 .quicklinks_link_image{
     display: flex;
     gap: 5rem;
@@ -223,15 +230,59 @@ h1,h2,h3{
     padding: 2rem;
 }
 
-.card{
+.s2_card{
     width: 16rem;
     height: 25rem;
     background-color: var(--secondary_color);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid grey;
 }
 
-.s2_up{
+.up{
     margin-top: 3rem;
 }
+
+
+.s2_card_image{
+    max-width: 100%; 
+    position: absolute;  
+}
+.link_and_svg{
+    display: flex;
+    margin-top: auto;
+    padding: 0.7rem;
+    z-index: 2;
+    
+    
+}
+
+.link_and_svg a{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.s2_card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 15%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+    pointer-events: none; /* This ensures the gradient doesn't interfere with any interactive elements */
+  }
+
+.white_gradient::after{
+    background: linear-gradient(to top, rgba(225, 222, 222, 0.094) 0%, rgba(168, 161, 161, 0) 100%);
+}
+
+
 
 /* ############################################################################################################################################### */
 
@@ -299,13 +350,13 @@ h1,h2,h3{
 .box{
     width: 60%;
     height: 60%;
-    background-color: var(--secondary_color);
+    
 }
 
 .video{
     width: 100%;
     height: 100%;
-    background-color: var(--secondary_color);
+   
 }
 
 .text{
@@ -551,7 +602,7 @@ ul {
 .toggle-switch {
     position: absolute;
     top: 1rem;
-    right: 4rem;
+    right: 1rem;
     width: 4rem;
     height: 2rem;
     --light: #d8dbe0;
@@ -611,3 +662,137 @@ ul {
     -webkit-box-shadow: none;
     box-shadow: none;
   }
+
+
+
+  /* ########################################################################################## SWITCH ######################### */
+
+  /* The switch - the box around the slider */
+.go_crazy_switch {
+  font-size: 17px;
+  position: absolute;
+  display: inline-block;
+  width: 1.2em;
+  height: 3.3em;
+  top: 4rem;
+  right: 2.2rem;
+}
+
+/* Hide default HTML checkbox */
+.go_crazy_switch .go_crazy_switch_chk {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.go_crazy_switch_slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(230, 0, 0);
+  transition: .4s;
+  border-radius: 5px;
+}
+
+.go_crazy_switch_slider:before {
+  position: absolute;
+  content: "";
+  height: .5em;
+  width: 2.4em;
+  border-radius: 5px;
+  left: -0.6em;
+  top: 0.2em;
+  background-color: rgb(68, 66, 66);
+  box-shadow: 0 6px 7px rgba(0,0,0,0.3);
+  transition: .4s;
+}
+
+.go_crazy_switch_slider:before, .go_crazy_switch_slider:after {
+  content: "";
+  display: block;
+}
+
+.go_crazy_switch_slider:after {
+  background: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.15) 0) 0 50% / 50% 100%,
+		repeating-linear-gradient(90deg,rgb(78, 78, 78) 0,rgb(141, 135, 135),rgb(97, 96, 96) 20%,rgb(97, 95, 95) 20%,rgb(99, 99, 99) 40%) 0 50% / 50% 100%,
+		radial-gradient(circle at 50% 50%,rgb(95, 94, 94) 25%, transparent 26%);
+  background-repeat: no-repeat;
+  border: 0.25em solid transparent;
+  border-left: 0.4em solid #464646;
+  border-right: 0 solid transparent;
+  transition: border-left-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+  transform: translateX(-22.5%) rotate(90deg);
+  transform-origin: 25% 50%;
+  position: relative;
+  top: 0.5em;
+  left: 0.55em;
+  width: 2em;
+  height: 1em;
+  box-sizing: border-box;
+}
+
+.go_crazy_switch_chk:checked + .go_crazy_switch_slider {
+  background-color: limegreen;
+}
+
+.go_crazy_switch_chk:focus + .go_crazy_switch_slider {
+  box-shadow: 0 0 1px limegreen;
+}
+
+.go_crazy_switch_chk:checked + .go_crazy_switch_slider:before {
+  transform: translateY(2.3em);
+}
+
+.go_crazy_switch_chk:checked + .go_crazy_switch_slider:after {
+  transform: rotateZ(90deg) rotateY(180deg) translateY(0.45em) translateX(-1.4em);
+}
+
+/* New class for hiding the switch */
+.go_crazy_switch.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+
+ /* ########################################################################################## SCROLL ANIMATION ######################### */
+
+
+/* Scroll animation styles */
+@media(prefers-reduced-motion) {
+    .scroll_animate {
+        opacity: 0;
+        
+        /* transition: all 1s; */
+        transition: opacity 0.5s, transform 0.5s;
+    }
+    
+}
+.scroll_animate {
+    opacity: 0;
+    filter: blur(5px);
+    transition: opacity 0.8s, transform 1s;
+}
+.scroll_animate.from-left {
+    transform: translateX(-100%);
+}
+.scroll_animate.from-right {
+    transform: translateX(100px);
+}
+.scroll_animate.from-top {
+    transform: translateY(-100px);
+}
+.scroll_animate.from-bottom {
+    transform: translateY(100px);
+}
+.scroll_animate.visible {
+    opacity: 1;
+    transform: translate(0);
+    filter: blur(0);
+}
+
+
+/* To delay the appearance of s2_cards */

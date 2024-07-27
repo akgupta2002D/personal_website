@@ -1,9 +1,12 @@
 # This is my personal website:
 
 ## Todo
-[] - The goal is fast work.
+[x] - The goal is fast work.
     Don't fix the edges. 
     Just loosely couple divs and keep going hard.
+[] - For the timeline section:
+    1. Find videos back from Nepal and create a short video
+    2. Find a picture of   
 ## Features:
 
 ### Dark and Light Mode
