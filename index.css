@@ -6,12 +6,22 @@
     --small_font: 0.85rem;
     --profile_background_primary: rgba(5, 5, 5, 0.852);
     --latest_news_primary: rgba(53, 53, 53, 0.916);
-    
+    --hero_bio_color: rgba(255, 255, 255, 0.441);
+    --button-border: #353535;
+    --timeline-line: white;
   }
   
 .dark_mode{
     --primary_color: white;
     --secondary_color: rgba(5, 5, 5, 1) ;
+    --profile_background_primary: rgba(254, 252, 252, 0.603);
+    --latest_news_primary: rgb(243, 243, 243);
+    --hero_bio_color: rgba(54, 54, 54, 0.863);
+    --button-border: #d7d5d5;
+    --timeline-line: rgba(5, 5, 5, 1);
+
+
+
 } 
 
 *{
@@ -25,6 +35,7 @@ body{
     flex-direction: column;
     color: var(--secondary_color);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: all 0.3s ease-in-out;
 }
 
 /* To not view scrollbar */
@@ -45,6 +56,15 @@ h1,h2,h3{
 
 .s1_hero_section{
     background-image: url('images/background_hero1.jpeg');
+    background-size: cover;
+    background-position:top;
+    background-repeat: no-repeat;
+    height: 125vh; /* Adjust as needed */
+    width: 100%;
+}
+
+.s1_hero_section_white{
+    background-image: url('images/white_background.jpg');
     background-size: cover;
     background-position:top;
     background-repeat: no-repeat;
@@ -81,12 +101,12 @@ h1,h2,h3{
     font-size: 1rem;
     min-width: 8rem;
     aspect-ratio: 1/0.35;
-    color: white;
+    color: var(--secondary_color);
     background: var(--profile_background_primary);
     background-size: cover;
     background-blend-mode: overlay;
     border-radius: 0.5em;
-    outline: 0.1em solid #353535;
+    outline: 0.1em solid var(--button-border);
     border: 0;
     box-shadow: 0 0 1em 1em rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
@@ -151,7 +171,7 @@ h1,h2,h3{
 
 .profile_name_and_description p{
     font-size: var(--small_font);
-    color: rgba(255, 255, 255, 0.441);
+    color: var(--hero_bio_color);
 }
 
 .profile_name_and_description h2{
@@ -196,9 +216,15 @@ h1,h2,h3{
 
 .quicklinks_link_image{
     display: flex;
-    gap: 5rem;
     background-color: var(--secondary_color);
     border-radius: 0.5rem;
+    overflow: hidden;
+    
+}
+
+.quicklinks_link_image img{
+    max-width: 100%;
+    max-height: 100%;
     
 }
 .quicklinks_link_image, .quicklinks_link_image img{
@@ -305,25 +331,28 @@ h1,h2,h3{
 
 .timeline_elements{
     display: flex;
-    padding: 1rem;
+    padding: 2rem 0rem;
 }
 
 .timeline_elements_left, .timeline_elements_right{
-    flex: 0 0 calc(50% - 8rem);
+    flex: 0 0 calc(50%);
     display: flex;
     flex-direction: column;
     gap: 2rem;
     align-items: center;
-    padding: 2rem 4rem;
+    padding: 2rem 2rem;
+    overflow-y: hidden;
 }
 
 .timeline_vertical_split{
-    border-left: 2px solid white;
+    border-left: 2px solid var(--timeline-line);
 }
 
 .element{
-    min-width: 32rem;
-    height: 18rem;
+    max-width: 34rem;
+    min-width: 20rem;
+    min-height: 12rem;
+    max-height: 18rem;
     background-color: var(--primary_color);
     display: flex;
     align-items: center;
@@ -331,19 +360,19 @@ h1,h2,h3{
 }
 
 .left{
-    justify-content: left;  
+    justify-content: flex-start;  
 }
 
 .right{
-    justify-content: right;
+    justify-content: flex-end;
 }
 
 .top{
-    justify-content: top;
+    align-items: flex-start;
 }
 
 .bottom{
-    justify-content: bottom;
+    align-items: flex-end;
 
 }
 
