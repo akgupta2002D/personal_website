@@ -277,11 +277,13 @@ h1,h2,h3{
     max-width: 100%; 
     position: absolute;  
 }
+
 .link_and_svg{
     display: flex;
     margin-top: auto;
     padding: 0.7rem;
     z-index: 2;
+    justify-content: center;
     
     
 }
@@ -470,52 +472,93 @@ h1,h2,h3{
 }
 
 .s3_content_container{
-    padding: 2rem;
+    /* padding: 2rem; */
     display: flex;
     gap: 2rem;
+    align-items: center;
 }
 
 .s3_left_content, .s3_right_content{
+    flex: 0 0 30%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     
 }
 
-.s3_content_card{
-    background-color: var(--secondary_color);
-    width: 22rem;
-    height: 12rem;
+.s3_left_content .link_and_svg a{
+    color: var(--secondary_color);
+}
+.s3_right_content .link_and_svg a{
+    color: var(--secondary_color);
+}
+.s3_main_description{
+
+    flex: 0 0 calc(40% - 4rem);
+    padding: 2rem;
 }
 
-.s3_main_picture{
-    width: 22rem;
+.s3_main_description p{
+    padding-top: 4rem;
+    text-align:center;
+
+}
+.s3_content_card{
+    background-color: var(--secondary_color);
+    width: 20rem;
+    max-height: 11rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.s3_content_card img{
+    width: 100%;
+
+}
+
+.s3_main_description{
+    width: 24rem;
 }
 
 /* ############################################################################################################################################### */
 
-/* CSS for Key Interests Section */
+/* CSS for Call To Action Section */
 .s4_call_to_action{
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: var(--primary_color);
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+    justify-content: center;
 }
 
 .s4_background_image{
     position: relative;
     top: 0;
     left: 0;
-    height: 15rem;
+    height: 25rem;
     width: 100%;
     background-color: var(--primary_color);
+    display: flex;
+    overflow: hidden;
 }
 
+.s4_background_image img{
+    flex: 0 0 50%;
+    height: 35rem;
+    background-blend-mode: lighten;
+   
+}
+
+
 .s4_content{
-    width: inherit;
+    flex: 0 0 50%;
     display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 /* ############################################################################################################################################### */
@@ -526,7 +569,8 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 6rem;
     background-color: var(--primary_color);
 }
 
