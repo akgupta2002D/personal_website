@@ -9,6 +9,7 @@
     --hero_bio_color: rgba(255, 255, 255, 0.441);
     --button-border: #353535;
     --timeline-line: white;
+    --glow-color: rgba(216, 213, 213, 0.79);
   }
   
 .dark_mode{
@@ -19,8 +20,7 @@
     --hero_bio_color: rgba(54, 54, 54, 0.863);
     --button-border: #d7d5d5;
     --timeline-line: rgba(5, 5, 5, 1);
-
-
+    --glow-color: rgba(31, 30, 30, 0.845);
 
 } 
 
@@ -237,6 +237,7 @@ h1,h2,h3{
     justify-content:flex-start;
 }
 
+
 /* ############################################################################################################################################### */
 
 
@@ -393,6 +394,7 @@ h1,h2,h3{
     background-color: var(--secondary_color);
 }
 
+
 /* ############################################################################################################################################### */
 
 /* CSS for Portfolio */
@@ -416,7 +418,7 @@ h1,h2,h3{
 .portfolio_text_link button{
     display: flex;
     margin-left: auto;
-    margin-right: 14rem;
+    /* margin-right: 14rem; */
 }
 
 .portfolio_gallery {
@@ -426,19 +428,33 @@ h1,h2,h3{
     gap: 4rem;
     justify-content: space-around;
 }
-
+.portfolio_and_text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .portfolio_element{
-    min-height: 30rem;
+    min-width: 30rem;
+    /* min-height: 45rem; */
     background-color: var(--secondary_color);   
+    overflow-y: scroll;
+    border-radius: 1rem;
+    margin-top: 0.4rem;
+}
+
+.portfolio_element img{
+    min-width: 100%;
 }
 
 .element_big{
-    min-width: 35rem;
+    max-width: 35rem;
+    max-height: 40rem;
+
 }
 
 .element_small{
-    min-width: 20rem;
-    
+    max-width: 20rem;
+    max-height: 30rem;
 }
 
 /* ############################################################################################################################################### */
@@ -824,4 +840,106 @@ ul {
 }
 
 
-/* To delay the appearance of s2_cards */
+/* To give porfolio elements a glow effect */
+
+.glow-effect {
+    box-shadow: 0 0 10px var(--glow-color);
+    transition: box-shadow 0.3s ease;
+  }
+  
+.glow-effect:hover {
+box-shadow: 0 0 20px var(--glow-color);
+}
+
+/* Porfolio Button Effect */
+
+.portfolio_explore_link{
+    display: flex;
+    margin-left: auto;
+    margin-right: 4rem;
+}
+   button.learn-more {
+    width: 12rem;
+    height: auto;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    /* vertical-align: middle; */
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    
+   }
+   
+   button.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: var(--secondary_color);
+    border-radius: 1.625rem;
+   }
+   
+   button.learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: var(--secondary_color);
+   }
+   
+   button.learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+   }
+   
+   button.learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid var(--primary_color);
+    border-right: 0.125rem solid var(--primary_color);
+    transform: rotate(45deg);
+   }
+   
+   button.learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: var(--secondary_color);
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+   }
+   
+   button:hover .circle {
+    width: 100%;
+   }
+   
+   button:hover .circle .icon.arrow {
+    background: var(--primary_color);
+    transform: translate(1rem, 0);
+   }
+   
+   button:hover .button-text {
+    color: var(--primary_color);
+   }

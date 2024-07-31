@@ -1,0 +1,232 @@
+/* Base font size adjustment for mobile */
+@media screen and (max-width: 768px) {
+    html {
+      font-size: 14px; /* Slightly smaller base font size for mobile */
+    }
+  
+    /* Hero Section */
+    .hero_content_container {
+      flex-direction: column;
+      padding: 2rem 1rem;
+    }
+  
+    .hero_left, .hero_right {
+      display: none; /* Hide hero-left and hero-right on mobile */
+    }
+  
+    #hero_profile_container {
+      width: 100%;
+    }
+  
+    #hero_profile_content {
+      min-height: auto;
+      padding-bottom: 2rem;
+    }
+  
+    .profile_name_and_description {
+      padding: 1rem;
+    }
+  
+    .quicklinks {
+      padding: 0.2rem 1rem;
+    }
+  
+    .s2_cards_container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+      }
+    
+    .s2_card {
+        width: calc(50% - 0.5rem);
+        height: auto; /* Allow height to adjust based on content */
+        min-height: 20rem; /* Set a minimum height */
+        min-width: 8rem; /* Adjust minimum width for smaller screens */
+        max-width: 12rem; /* Limit maximum width */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    
+      .s2_card_image {
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* Ensure the image covers the area without distortion */
+        flex-grow: 1; /* Allow image to grow and fill available space */
+      }
+      
+    
+      .link_and_svg {
+        display: flex;
+        padding: 0.5rem;
+        font-size: 0.9rem; /* Slightly reduce font size */
+        align-items: center;
+      }
+    
+      .link_and_svg a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+    
+      .link_and_svg img {
+        width: 14px;
+        height: 14px;
+      }
+    
+      /* Hide the third and fourth cards on smaller screens */
+      .s2_card:nth-child(n+3) {
+        display: none;
+      }
+  
+    /* Timeline Section */
+    .timeline {
+      padding: 1rem; /* Reduce overall padding */
+    }
+  
+    .timeline_elements {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .timeline_elements_left, .timeline_elements_right {
+      width: 100%;
+      padding: 0.5rem; /* Reduce padding to make it smaller */
+    }
+  
+    .timeline_vertical_split {
+      display: none;
+    }
+  
+    .element {
+      min-width: 80%;
+      max-width: 90%;
+      min-height: 12rem; /* Reduce minimum height */
+      max-height: 25rem; /* Reduce maximum height */
+      display: flex;
+      justify-content: center;
+    }
+  
+    /* Portfolio Preview Section */
+    .portfolio_gallery {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+  
+    .portfolio_element {
+      min-width: 100%;
+      max-width: 100%;
+      height: auto; /* Allow height to adjust based on content */
+    }
+  
+    .portfolio_and_text {
+      width: 100%; /* Ensure full width for each portfolio item */
+    }
+  
+    /* Key Interest Section */
+    .s3_content_container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .s3_content_card, .s3_main_picture {
+      width: 100%;
+    }
+  
+    /* Call to Action Section */
+    .s4_background_image {
+      height: auto;
+    }
+  
+    .s4_content {
+      padding: 2rem 1rem;
+    }
+  
+    /* Footer */
+    footer {
+      padding: 1rem;
+    }
+
+    /* Add these new rules to prevent overflow */
+  body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%;
+  }
+
+  /* Ensure all sections take full width but don't overflow */
+  section {
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Adjust padding for all direct children of body */
+  body > * {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Ensure images don't overflow their containers */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Adjust hero section */
+  .s1_hero_section {
+    width: 100%;
+    height: auto;
+    min-height: 75vh;
+  }
+
+  /* Ensure portfolio elements don't overflow */
+  .portfolio_element {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .portfolio_explore_link{
+    margin-right: 0;
+  }
+
+  /* Adjust timeline elements */
+  .timeline_elements {
+    width: 100%;
+    padding: 0;
+  }
+
+  .element {
+    /* width: 100%;
+    max-width: 100%; */
+    overflow: hidden;
+  }
+
+  /* Ensure all flex containers don't cause overflow */
+  .hero_content_container,
+  .s2_cards_container,
+  .s3_content_container,
+  .portfolio_gallery {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  }
+  
+  /* Additional adjustments for very small screens */
+  @media screen and (max-width: 480px) {
+    html {
+      font-size: 12px;
+    }
+  
+    .s2_card {
+      width: 100%; /* Full width for each card on very small screens */
+      height: 12rem; /* Even smaller height for very small screens */
+    }
+  
+    .portfolio_text_link button {
+      margin-right: 0;
+    }
+  }
