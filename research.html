@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Portal</title>
+    <link rel="stylesheet" href="research.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Research Interests</h2>
+        <ul>
+            <li><a href="research_website/cross_lingual_transfer.html">Cross-Lingual Transfer Learning</a></li>
+            <li><a href="research_website/low_resource_nlp.html">Low-Resource NLP Strategies</a></li>
+            <li><a href="research_website/few_shot_learning.html">Few-Shot Learning for Nepali NLP</a></li>
+            <li><a href="research_website/ontology_ml.html">Ontology-Driven Semantic ML</a></li>
+        </ul>
+    </div>
+    
+    <div class="content">
+        <h1>Cross-Lingual Transfer Learning for Nepali NLP</h1>
+        
+        <div class="section">
+            <h2>Idea in a Nutshell</h2>
+            <p>
+        So, I am interested in training/fine tuning models using little data. For example, we don’t have a lot of data for Nepali Language, but could we come up with ways to map Nepali Language into English Language and then use English data to fine-tune our models?
+            </p>
+        </div>
+        <div class="section">
+            <h2>More Formal Introduction</h2>
+            <p>Nepali, a low-resource language, lacks the vast datasets needed for robust NLP applications. Instead of collecting massive datasets, we propose leveraging <span class="highlight">cross-lingual transfer learning</span>—mapping Nepali to English representations to piggyback on existing English-trained models. The idea is simple: align Nepali text with English using shared embeddings, then use established English models for tasks like sentiment analysis and translation without needing extensive Nepali-specific training data.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Research Objectives</h2>
+            <ul>
+                <li>Map Nepali linguistic structures onto English-trained models to reduce data dependency.</li>
+                <li>Explore how well cross-lingual embeddings (XLM-R, mBERT, LASER) capture Nepali semantics.</li>
+                <li>Fine-tune pre-trained English models for Nepali NLP tasks using minimal native data.</li>
+                <li>Assess the practicality of using transfer learning instead of dataset expansion.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Methodology</h2>
+            <p>Rather than manually building a Nepali NLP dataset, we take an efficiency-first approach:</p>
+            <ul>
+                <li>Use bilingual embeddings to align Nepali text with English, leveraging existing language models.</li>
+                <li>Apply back-translation (Nepali → English → Nepali) to generate synthetic training data.</li>
+                <li>Train models to recognize Nepali sentence structures based on similar English datasets.</li>
+                <li>Test adaptability by applying these methods to real-world Nepali text classification and translation tasks.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Potential Applications</h2>
+            <p>If successful, this method could be used to quickly build functional NLP systems for languages with limited data. For example, we could:</p>
+            <ul>
+                <li>Develop Nepali-language chatbots without extensive training data.</li>
+                <li>Improve automatic translation for Nepali by leveraging English-Nepali language mapping.</li>
+                <li>Build sentiment analysis models for social media content in Nepali, adapted from English classifiers.</li>
+            </ul>
+        </div>
+        
+        <footer>
+            &copy; 2025 Ankit | Skidmore College | NLP Research
+        </footer>
+    </div>
+
+    <div class="reference"></div>
+</body>
+</html>
