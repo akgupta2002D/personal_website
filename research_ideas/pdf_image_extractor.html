@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML for PDF Image Extraction</title>
+    <link rel="stylesheet" href="../research.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Research Interests</h2>
+        <ul>
+            <li><a href="../research.html">Cross-Lingual Transfer Learning</a></li>
+            <li><a href="#">ML for PDF Image Extraction</a></li>
+            <li><a href="few_shot_learning.html">Project Idea 3 - Coming Soon</a></li>
+            <li><a href="ontology_ml.html">Project Idea 4 - Coming Soon</a></li>
+        </ul>
+    </div>
+    
+    <div class="content">
+        <h1>Machine Learning for PDF Image Extraction</h1>
+        
+        <div class="section">
+            <h2>Idea in a Nutshell</h2>
+            <p>
+                Extracting images from PDFs is a tedious task when done manually. This project explores how Machine Learning can automate image extraction and cropping within PDFs, streamlining workflows for researchers, publishers, and analysts.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Research Objectives</h2>
+            <ul>
+                <li>Develop an ML pipeline that detects and extracts images embedded in PDFs.</li>
+                <li>Enhance cropping mechanisms using object detection to remove unnecessary whitespace.</li>
+                <li>Optimize extracted images for clarity and format consistency.</li>
+                <li>Test performance across different document types (scientific papers, scanned documents, books).</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Methodology</h2>
+            <p>The process involves multiple steps to ensure high-quality image extraction:</p>
+            <ul>
+                <li>Use **OpenCV** and **Tesseract OCR** to identify image regions within PDFs.</li>
+                <li>Apply **Deep Learning-based Object Detection** (YOLO, Faster R-CNN) to refine image boundaries.</li>
+                <li>Use **image segmentation** techniques to enhance cropping precision.</li>
+                <li>Convert images to appropriate formats (JPEG, PNG) with minimal quality loss.</li>
+                <li>Develop a user-friendly interface for uploading and processing PDFs.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Potential Applications</h2>
+            <ul>
+                <li>Automating figure and diagram extraction for research papers.</li>
+                <li>Improving document digitization workflows for archival purposes.</li>
+                <li>Assisting media and content creators in extracting visuals from reports.</li>
+                <li>Enabling AI-driven data visualization by extracting charts and graphs.</li>
+            </ul>
+        </div>
+        
+        <footer>
+            &copy; 2025 Ankit | Skidmore College | NLP & ML Research
+        </footer>
+    </div>
+    
+    <div class="reference">
+        <h2>Figures and References</h2>
+        <p>Pipeline Overview</p>
+        <img src="../images/research/ml_image_extractor.drawio.png" alt="ML Pipeline for PDF Image Extraction">
+        <a class="article" href="https://arxiv.org/pdf/2103.10009.pdf">
+            <h4>
+                Machine Learning Approaches for Document Image Extraction
+            </h4>
+            <p>
+                A study on state-of-the-art methods for extracting and enhancing images from documents.
+            </p>
+        </a>
+    </div>
+</body>
+</html>
